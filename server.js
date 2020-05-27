@@ -19,12 +19,8 @@ const { isAuth } = require('./middleware/isAuth');
 const Contact = require('./models/Contact');
 const User = require('./models/User');
 
-app.use(passport.initialize());
-app.use(passport.session()); //session handles it post login
-
 app.use(express.static('public'));
 app.use(express.static('assets'));
-
 app.use(
     session({//using express-session
     secret: 'mySecret', // used to create a token similar to bcrpyt- gives individual access to the session
@@ -34,6 +30,8 @@ app.use(
     })
 );
 
+app.use(passport.initialize());
+app.use(passport.session()); //session handles it post login
 // body parser structures the request into a format that's simple to use
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -139,14 +137,14 @@ app.post('/addContact', (req, res) => {
 })
 
 
-app.get('/signin', (req, res) => {
-try {
-    res.render('signin', {layout: 'main'});
-} catch (err) {
-    console.log(err.message);
-    res.status(500).send('Server Error')
-}
-})
+// app.get('/signin', (req, res) => {
+// try {
+//     res.render('signin', {layout: 'main'});
+// } catch (err) {
+//     console.log(err.message);
+//     res.status(500).send('Server Error')
+// }
+// })
 
 app.get('/', (req, res) => {
     res.render('login', {layout: 'main'});
@@ -156,13 +154,13 @@ app.get('/login' , (req, res) => {
     res.render('login', {layout: 'main'});
 })
 
-app.get('/signin', (req, res) => {
-    res.render('signin', {layout: 'main'});
-})
+// app.get('/signin', (req, res) => {
+//     res.render('signin', {layout: 'main'});
+// })
 
-app.get('/signup', (req, res) => {
-    res.render('signup', {layout: 'main'});
-})
+// app.get('/signup', (req, res) => {
+//     res.render('signup', {layout: 'main'});
+// })
 
 app.get('/create', (req, res) => {
     res.render('create', {layout: 'main'});
@@ -172,21 +170,13 @@ app.get('/create', (req, res) => {
 //     res.render('forgottenpass', {layout: 'main'});
 // })
 
-app.get('/help', (req, res) => {
-    res.render('help', {layout: 'main'});
-})
-
-app.get('/calender', (req, res) => {
-    res.render('calender', {layout: 'main'});
-})
-
-app.get('/contact', (req, res) => {
-    res.render('contact', {layout: 'main'});
-})
-
 // app.get('/home', (req, res) => {
 //     res.render('home', {layout: 'main'});
 // })
+
+app.get('/help', (req, res) => {
+    res.render('help', {layout: 'main'});
+})
 
 app.get('/panic', (req, res) => {
     res.render('panic', {layout: 'main'});
@@ -206,6 +196,14 @@ app.get('/eating', (req, res) => {
 
 app.get('/anxiety', (req, res) => {
     res.render('anxiety', {layout: 'main'});
+})
+
+app.get('/calender', (req, res) => {
+    res.render('calender', {layout: 'main'});
+})
+
+app.get('/contact', (req, res) => {
+    res.render('contact', {layout: 'main'});
 })
 
 // });mongodb+srv://Smith:passwordfullstack@clusterfullstack-quihk.mongodb.net/contactManager?retryWrites=true&w=majority'
