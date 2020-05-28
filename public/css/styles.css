@@ -473,6 +473,12 @@ width:90%;
 /* help css ends */
 
 /* anxiety css start */
+.anxietytitle{
+    color: white;
+    position: center;
+    padding-top: 20px;
+}
+
 .h4{
     text-align: center;
     color: blue;
@@ -505,11 +511,9 @@ div.col-xs-12 {
     padding-left: 500px;
 }
 
-/*bipolar css end */
-
 .bipolartitle {
 color: white;
-padding-left: 650px;
+position: center;
 padding-top: 20px;
 }
 
@@ -517,6 +521,8 @@ padding-top: 20px;
     padding-left: 80px;
     max-width:900px;
 }
+
+/*bipolar css end */
   
 .col-12-Guidance {
     border:5px;
@@ -527,8 +533,8 @@ padding-top: 20px;
 
 .panictitle{
 color: white;
-padding-left: 650px;
 padding-top: 20px;
+position: center;
 }
 
 .container-panic{
@@ -560,7 +566,7 @@ h2.howtodealpanic{
 
 .depressiontitle{
     color: white;
-    padding-left: 650px;
+    position:center;
     padding-top: 20px;
     }
 
@@ -600,7 +606,7 @@ color:white;
 
 .bipolartitle{
     color: white;
-    padding-left: 650px;
+    position: center;
     padding-top: 20px;
 }
 
@@ -623,7 +629,7 @@ color:white;
 /* eating css */
 .eatingtitle{
     color: white;
-    padding-left: 650px;
+    position: center;
     padding-top: 20px;
 }
 
